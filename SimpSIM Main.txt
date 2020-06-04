@@ -1,0 +1,19 @@
+load  R0, startData; Load R0 With the value stored in start
+load  R1, endData;   Load R1 With the value stored in end
+load  R3, 1;       1 is needed for increment starting numbers
+load  R4, -1;     -1 is needed for decrement the ending numbers 
+Main: 
+addi  R1,R1,R4;  Add the value stored in R1 and R4 and store them in R1
+load  R5, [R0];  Load the content of R0 to R5   
+load  R6, [R1];  Load the content of R1 to R6
+store R5, [R1];  Store the Content of R1 to R5 
+store R6, [R0];  Store the content of R0 to R6
+addi R0,R0,R3;   Add the contents in R0 and R3 and store them in R0
+jmpLe R1<=R0, Stop;  if StartData = endData jump to Stop 
+jmp Main 
+
+Stop: 
+halt;    
+org 70h;
+startData: db 10h,20h,30h,40h,50h,60h,70h,80h;
+endData: db 0;

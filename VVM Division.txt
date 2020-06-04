@@ -1,0 +1,24 @@
+in           //changes
+sto 90     //changes 
+in            // changes
+sto 91       //changes
+lda 90
+brz 20
+sub 91
+sto 90
+brp 10
+jmp 20
+*10
+lda 92
+add 93
+sto 92
+jmp 04     //changes
+*20
+lda 92
+out
+hlt
+*90
+dat 000    // changes
+dat 000     // changes
+dat 000
+dat 001
